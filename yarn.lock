@@ -1740,6 +1740,7 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
+
 "@react-native-community/cli-clean@11.3.6":
   version "11.3.6"
   resolved "https://registry.yarnpkg.com/@react-native-community/cli-clean/-/cli-clean-11.3.6.tgz#43a06cbee1a5480da804debc4f94662a197720f2"
@@ -1761,7 +1762,6 @@
     deepmerge "^4.3.0"
     glob "^7.1.3"
     joi "^17.2.1"
-
 "@react-native-community/cli-debugger-ui@11.3.6":
   version "11.3.6"
   resolved "https://registry.yarnpkg.com/@react-native-community/cli-debugger-ui/-/cli-debugger-ui-11.3.6.tgz#1eb2276450f270a938686b49881fe232a08c01c4"
@@ -1778,6 +1778,7 @@
     "@react-native-community/cli-platform-android" "11.3.6"
     "@react-native-community/cli-platform-ios" "11.3.6"
     "@react-native-community/cli-tools" "11.3.6"
+
     chalk "^4.1.2"
     command-exists "^1.2.8"
     envinfo "^7.7.2"
@@ -1792,6 +1793,7 @@
     sudo-prompt "^9.0.0"
     wcwidth "^1.0.1"
     yaml "^2.2.1"
+
 
 "@react-native-community/cli-hermes@11.3.6":
   version "11.3.6"
@@ -1814,6 +1816,7 @@
     execa "^5.0.0"
     glob "^7.1.3"
     logkitty "^0.7.1"
+
 
 "@react-native-community/cli-platform-ios@11.3.6":
   version "11.3.6"
@@ -1953,6 +1956,7 @@
   resolved "https://registry.yarnpkg.com/@react-native/js-polyfills/-/js-polyfills-0.72.1.tgz#905343ef0c51256f128256330fccbdb35b922291"
   integrity sha512-cRPZh2rBswFnGt5X5EUEPs0r+pAsXxYsifv/fgy9ZLQokuT52bPH+9xjDR+7TafRua5CttGW83wP4TntRcWNDA==
 
+
 "@react-native/metro-config@^0.72.7":
   version "0.72.7"
   resolved "https://registry.yarnpkg.com/@react-native/metro-config/-/metro-config-0.72.7.tgz#2252fc796fbb487b8584161e1bcdd3eecf8d1aa6"
@@ -1973,10 +1977,12 @@
   resolved "https://registry.yarnpkg.com/@react-native/normalize-colors/-/normalize-colors-0.72.0.tgz#14294b7ed3c1d92176d2a00df48456e8d7d62212"
   integrity sha512-285lfdqSXaqKuBbbtP9qL2tDrfxdOFtIMvkKadtleRQkdOxx+uzGvFr82KHmc/sSiMtfXGp7JnFYWVh4sFl7Yw==
 
+
 "@react-native/virtualized-lists@^0.72.8":
   version "0.72.8"
   resolved "https://registry.yarnpkg.com/@react-native/virtualized-lists/-/virtualized-lists-0.72.8.tgz#a2c6a91ea0f1d40eb5a122fb063daedb92ed1dc3"
   integrity sha512-J3Q4Bkuo99k7mu+jPS9gSUSgq+lLRSI/+ahXNwV92XgJ/8UgOTxu2LPwhJnBk/sQKxq7E8WkZBnBiozukQMqrw==
+
   dependencies:
     invariant "^2.2.4"
     nullthrows "^1.1.1"
@@ -2558,6 +2564,7 @@ babel-plugin-transform-flow-enums@^0.0.2:
   integrity sha512-g4aaCrDDOsWjbm0PUUeVnkcVd6AKJsVc/MbnPhEotEpkeJQP6b8nzewohQi7+QS8UyPehOhGWn0nOwjvWpmMvQ==
   dependencies:
     "@babel/plugin-syntax-flow" "^7.12.1"
+
 
 babel-plugin-transform-remove-console@^6.9.4:
   version "6.9.4"
@@ -4988,6 +4995,7 @@ metro-minify-terser@0.76.5:
   dependencies:
     terser "^5.15.0"
 
+
 metro-minify-terser@0.76.7:
   version "0.76.7"
   resolved "https://registry.yarnpkg.com/metro-minify-terser/-/metro-minify-terser-0.76.7.tgz#aefac8bb8b6b3a0fcb5ea0238623cf3e100893ff"
@@ -4999,13 +5007,14 @@ metro-minify-uglify@0.76.5:
   version "0.76.5"
   resolved "https://registry.yarnpkg.com/metro-minify-uglify/-/metro-minify-uglify-0.76.5.tgz#afbb5e3bbc9ca05a9a63d1c5fd74dfc9c1b4c4f8"
   integrity sha512-JZNO5eK8r625/cheWSl+y7n0RlHLt03iSMgXPAxirH8BiFqPzs7h+c57r4AvSs793VXcF7L3sI1sAOj+nRqTeg==
+
   dependencies:
     uglify-es "^3.1.9"
 
 metro-minify-uglify@0.76.7:
   version "0.76.7"
   resolved "https://registry.yarnpkg.com/metro-minify-uglify/-/metro-minify-uglify-0.76.7.tgz#3e0143786718dcaea4e28a724698d4f8ac199a43"
-  integrity sha512-FuXIU3j2uNcSvQtPrAJjYWHruPiQ+EpE++J9Z+VznQKEHcIxMMoQZAfIF2IpZSrZYfLOjVFyGMvj41jQMxV1Vw==
+  integrity sha512-FuXIU3j2uNcSvQtPrAJjYWHruPiQ+EpE++J9Z+VznQKEHcIxMMoQZAfIF2IpZSrZYfLOjVFyGMvj41jQMxV1Vw
   dependencies:
     uglify-es "^3.1.9"
 
@@ -5156,6 +5165,7 @@ metro-react-native-babel-transformer@0.76.5:
     metro-source-map "0.76.5"
     nullthrows "^1.1.1"
 
+
 metro-react-native-babel-transformer@0.76.7:
   version "0.76.7"
   resolved "https://registry.yarnpkg.com/metro-react-native-babel-transformer/-/metro-react-native-babel-transformer-0.76.7.tgz#ccc7c25b49ee8a1860aafdbf48bfa5441d206f8f"
@@ -5177,6 +5187,7 @@ metro-resolver@0.76.7:
   resolved "https://registry.yarnpkg.com/metro-resolver/-/metro-resolver-0.76.7.tgz#f00ebead64e451c060f30926ecbf4f797588df52"
   integrity sha512-pC0Wgq29HHIHrwz23xxiNgylhI8Rq1V01kQaJ9Kz11zWrIdlrH0ZdnJ7GC6qA0ErROG+cXmJ0rJb8/SW1Zp2IA==
 
+
 metro-runtime@0.76.5:
   version "0.76.5"
   resolved "https://registry.yarnpkg.com/metro-runtime/-/metro-runtime-0.76.5.tgz#546d3baf498b2736565c0781810c80bd9d81212e"
@@ -5184,7 +5195,6 @@ metro-runtime@0.76.5:
   dependencies:
     "@babel/runtime" "^7.0.0"
     react-refresh "^0.4.0"
-
 metro-runtime@0.76.7:
   version "0.76.7"
   resolved "https://registry.yarnpkg.com/metro-runtime/-/metro-runtime-0.76.7.tgz#4d75f2dbbcd19a4f01e0d89494e140b0ba8247e4"
@@ -5200,6 +5210,7 @@ metro-runtime@0.76.8:
   dependencies:
     "@babel/runtime" "^7.0.0"
     react-refresh "^0.4.0"
+
 
 metro-source-map@0.76.5:
   version "0.76.5"
@@ -5254,7 +5265,6 @@ metro-symbolicate@0.76.5:
     source-map "^0.5.6"
     through2 "^2.0.1"
     vlq "^1.0.0"
-
 metro-symbolicate@0.76.7:
   version "0.76.7"
   resolved "https://registry.yarnpkg.com/metro-symbolicate/-/metro-symbolicate-0.76.7.tgz#1720e6b4ce5676935d7a8a440f25d3f16638e87a"
@@ -5279,6 +5289,7 @@ metro-symbolicate@0.76.8:
     through2 "^2.0.1"
     vlq "^1.0.0"
 
+
 metro-transform-plugins@0.76.5:
   version "0.76.5"
   resolved "https://registry.yarnpkg.com/metro-transform-plugins/-/metro-transform-plugins-0.76.5.tgz#b4a49b5b55fd3bc24c5a65fa8e40ba07d84e4170"
@@ -5289,7 +5300,6 @@ metro-transform-plugins@0.76.5:
     "@babel/template" "^7.0.0"
     "@babel/traverse" "^7.20.0"
     nullthrows "^1.1.1"
-
 metro-transform-plugins@0.76.7:
   version "0.76.7"
   resolved "https://registry.yarnpkg.com/metro-transform-plugins/-/metro-transform-plugins-0.76.7.tgz#5d5f75371706fbf5166288e43ffd36b5e5bd05bc"
@@ -5300,7 +5310,6 @@ metro-transform-plugins@0.76.7:
     "@babel/template" "^7.0.0"
     "@babel/traverse" "^7.20.0"
     nullthrows "^1.1.1"
-
 metro-transform-worker@0.76.5:
   version "0.76.5"
   resolved "https://registry.yarnpkg.com/metro-transform-worker/-/metro-transform-worker-0.76.5.tgz#d101ad46c1a607c7bc52f0a0888961d237df42bd"
@@ -6050,14 +6059,13 @@ react-native@0.72.4:
   dependencies:
     "@jest/create-cache-key-function" "^29.2.1"
     "@react-native-community/cli" "11.3.6"
-    "@react-native-community/cli-platform-android" "11.3.6"
-    "@react-native-community/cli-platform-ios" "11.3.6"
+    "@react-native-community/cli-platform-android" "11.3.
     "@react-native/assets-registry" "^0.72.0"
     "@react-native/codegen" "^0.72.6"
     "@react-native/gradle-plugin" "^0.72.11"
     "@react-native/js-polyfills" "^0.72.1"
     "@react-native/normalize-colors" "^0.72.0"
-    "@react-native/virtualized-lists" "^0.72.8"
+
     abort-controller "^3.0.0"
     anser "^1.4.9"
     base64-js "^1.1.2"
@@ -6070,6 +6078,7 @@ react-native@0.72.4:
     memoize-one "^5.0.0"
     metro-runtime "0.76.8"
     metro-source-map "0.76.8"
+
     mkdirp "^0.5.1"
     nullthrows "^1.1.1"
     pretty-format "^26.5.2"

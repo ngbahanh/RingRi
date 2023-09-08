@@ -385,6 +385,10 @@ PODS:
     - RCTTypeSafety
     - React-Core
     - ReactCommon/turbomodule/core
+  - React-perflogger (0.71.8)
+  - React-RCTActionSheet (0.71.8):
+    - React-Core/RCTActionSheetHeaders (= 0.71.8)
+  - React-RCTAnimation (0.71.8):
   - React-NativeModulesApple (0.72.4):
     - hermes-engine
     - React-callinvoker
@@ -490,6 +494,12 @@ PODS:
     - glog
     - hermes-engine
     - RCT-Folly (= 2021.07.22.00)
+    - React-callinvoker (= 0.71.8)
+    - React-Core (= 0.71.8)
+    - React-cxxreact (= 0.71.8)
+    - React-jsi (= 0.71.8)
+    - React-logger (= 0.71.8)
+    - React-perflogger (= 0.71.8)
     - React-callinvoker (= 0.72.4)
     - React-cxxreact (= 0.72.4)
     - React-jsi (= 0.72.4)
@@ -500,6 +510,7 @@ PODS:
   - RNReanimated (3.2.0):
     - DoubleConversion
     - FBLazyVector
+    - FBReactNativeSpec
     - glog
     - RCT-Folly
     - RCTRequired
@@ -771,4 +782,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 6f7e8e8ec96582e9ae6cb6ff7955fa4590eea284
 
-COCOAPODS: 1.12.1
+COCOAPODS: 1.12.0
