@@ -1,11 +1,14 @@
 import React from 'react';
-import { StyleSheet, Text } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import Animation from '../../components/Animation';
 import Screen from '../../themes/layouts/Screen';
 
 const ProfileScreen = () => {
   return (
     <Screen>
-      <Text>Profile</Text>
+      <Screen>
+          <Animation.Lottie source="loading" />
+      </Screen>
     </Screen>
   );
 };
