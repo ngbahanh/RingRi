@@ -2,18 +2,23 @@ import i18n, { InitOptions } from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import { LANGUAGES } from './types';
 
-import en from '../../locales/en/en-US.json';
-import vi from '../../locales/vi/vi-VN.json';
+import { en, vi } from '../../locales';
 
 export const resources = {
   en: {
+    common: {
+      ...en.common,
+    },
     translation: {
-      en,
+      ...en.translation,
     },
   },
   vi: {
+    common: {
+      ...vi.common,
+    },
     translation: {
-      vi,
+      ...vi.translation,
     },
   },
 };
@@ -29,6 +34,7 @@ const defaultConfig: InitOptions = {
   interpolation: {
     escapeValue: false,
   },
+  debug: __DEV__,
 };
 
 i18n.use(initReactI18next).init(defaultConfig, (err, t) => {
