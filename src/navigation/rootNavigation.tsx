@@ -4,13 +4,14 @@ import {
 } from '@react-navigation/bottom-tabs';
 import {
   NavigationContainer,
+  RouteProp,
   useNavigationContainerRef,
 } from '@react-navigation/native';
 import {
   NativeStackNavigationOptions,
   createNativeStackNavigator,
 } from '@react-navigation/native-stack';
-import TestScreen from '../screens/TestScreen';
+import HomeScreen from '../screens/HomeScreen';
 import { TABS } from './enums';
 import { ROUTER } from './router';
 import { HomeStack, ProfileStack } from './stacks';
@@ -26,11 +27,32 @@ const trackScreenView = async (routeName: string, routeParams: any) => {
   }
 };
 
+const bottomTabItemOption = (
+  routeName: keyof TabParamsList,
+): BottomTabNavigationOptions | undefined => {
+  switch (routeName) {
+    case TABS.HOME_TAB:
+      return {
+        tabBarLabel: 'Home',
+      };
+    case TABS.PROFILE_TAB:
+      return {
+        tabBarLabel: 'Profile',
+      };
+  }
+};
+
 const RootNavigation = () => {
   const navigationRef = useNavigationContainerRef();
 
-  const bottomTabDefaultOptions: BottomTabNavigationOptions = {
-    headerShown: false,
+  const bottomTabDefaultOptions = (props: {
+    route: RouteProp<TabParamsList, keyof TabParamsList>;
+    navigation: any;
+  }): BottomTabNavigationOptions => {
+    return {
+      headerShown: false,
+      ...bottomTabItemOption(props.route.name),
+    };
   };
 
   const stackDefaultOptions: NativeStackNavigationOptions = {
@@ -44,7 +66,7 @@ const RootNavigation = () => {
   const Tabs = () => (
     <Tab.Navigator
       initialRouteName={TABS.HOME_TAB}
-      screenOptions={bottomTabDefaultOptions}>
+      screenOptions={props => bottomTabDefaultOptions(props)}>
       <Tab.Screen name={TABS.HOME_TAB} component={HomeStack} />
       <Tab.Screen name={TABS.PROFILE_TAB} component={ProfileStack} />
     </Tab.Navigator>
@@ -52,7 +74,7 @@ const RootNavigation = () => {
 
   const NonBottomTab = (
     <>
-      <Stack.Screen name={ROUTER.testScreen} component={TestScreen} />
+      <Stack.Screen name={ROUTER.homeScreen} component={HomeScreen} />
     </>
   );
 
