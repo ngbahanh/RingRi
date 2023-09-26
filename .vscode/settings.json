@@ -1,5 +1,5 @@
 {
-  "cSpell.words": ["persistor"],
+  "cSpell.words": ["persistor", "Pressable"],
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.organizeImports": true,
