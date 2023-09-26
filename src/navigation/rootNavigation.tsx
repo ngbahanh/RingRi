@@ -11,6 +11,7 @@ import {
   NativeStackNavigationOptions,
   createNativeStackNavigator,
 } from '@react-navigation/native-stack';
+import { useTranslation } from 'react-i18next';
 import HomeScreen from '../screens/HomeScreen';
 import { TABS } from './enums';
 import { ROUTER } from './router';
@@ -27,23 +28,24 @@ const trackScreenView = async (routeName: string, routeParams: any) => {
   }
 };
 
-const bottomTabItemOption = (
-  routeName: keyof TabParamsList,
-): BottomTabNavigationOptions | undefined => {
-  switch (routeName) {
-    case TABS.HOME_TAB:
-      return {
-        tabBarLabel: 'Home',
-      };
-    case TABS.PROFILE_TAB:
-      return {
-        tabBarLabel: 'Profile',
-      };
-  }
-};
-
 const RootNavigation = () => {
   const navigationRef = useNavigationContainerRef();
+  const { t } = useTranslation();
+
+  const bottomTabItemOption = (
+    routeName: keyof TabParamsList,
+  ): BottomTabNavigationOptions | undefined => {
+    switch (routeName) {
+      case TABS.HOME_TAB:
+        return {
+          tabBarLabel: t('tabs.homeTab'),
+        };
+      case TABS.PROFILE_TAB:
+        return {
+          tabBarLabel: t('tabs.profileTab'),
+        };
+    }
+  };
 
   const bottomTabDefaultOptions = (props: {
     route: RouteProp<TabParamsList, keyof TabParamsList>;
