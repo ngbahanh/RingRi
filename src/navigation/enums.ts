@@ -1,4 +1,6 @@
 enum TABS {
+  BOTTOM_TABS = 'BottomTabs',
+
   HOME_TAB = 'HomeTab',
   PROFILE_TAB = 'ProfileTab',
 }
