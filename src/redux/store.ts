@@ -1,7 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import { persistReducer, persistStore } from 'redux-persist';
-import { PersistConfig } from 'redux-persist/es/types';
+import { PersistConfig, persistReducer, persistStore } from 'redux-persist';
 import settingSlice from './slices/settingSlice';
 
 const additionalMiddleware = [];

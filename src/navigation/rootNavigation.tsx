@@ -11,8 +11,8 @@ import {
   NativeStackNavigationOptions,
   createNativeStackNavigator,
 } from '@react-navigation/native-stack';
+import HomeScreen from '@screens/HomeScreen';
 import { useTranslation } from 'react-i18next';
-import HomeScreen from '../screens/HomeScreen';
 import { TABS } from './enums';
 import { ROUTER } from './router';
 import { HomeStack, ProfileStack } from './stacks';
