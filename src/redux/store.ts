@@ -3,10 +3,13 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { persistReducer, persistStore } from 'redux-persist';
 import { PersistConfig } from 'redux-persist/es/types';
 import settingSlice from './slices/settingSlice';
+import userSlice from './slices/userSlice';
 
 const additionalMiddleware = [];
+
 const rootReducer = combineReducers({
-  setting: settingSlice,
+  settings: settingSlice,
+  user: userSlice,
 });
 
 const persistConfig: PersistConfig<any> = {

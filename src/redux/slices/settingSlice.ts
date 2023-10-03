@@ -1,25 +1,34 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { AppDispatch, RootState } from '../store';
 
-const initialState = {};
+type SettingState = {
+  theme: 'dark' | 'light';
+  notifications: [];
+};
+
+const initialState: SettingState = {
+  theme: 'light',
+  notifications: [],
+};
 
 const settingSlice = createSlice({
-  name: 'setting',
+  name: 'settings',
   initialState,
   reducers: {
     resetSetting: state => {
-      state = {};
+      state = initialState;
     },
   },
 });
 
 export const { resetSetting } = settingSlice.actions;
 
-export const resetSettingAsync = setting => dispatch => {
+export const resetSettingAsync = () => (dispatch: AppDispatch) => {
   setTimeout(() => {
-    dispatch(resetSetting(setting));
+    dispatch(resetSetting());
   }, 1000);
 };
 
-export const getSetting = state => state.setting;
+export const getSetting = (state: RootState) => state.settings;
 
 export default settingSlice.reducer;
