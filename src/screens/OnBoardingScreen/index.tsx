@@ -1,5 +1,5 @@
+import Screen from '@themes/layouts/Screen';
 import { StyleSheet, Text } from 'react-native';
-import Screen from '../../themes/layouts/Screen';
 
 const OnBoardingScreen = () => {
   return (

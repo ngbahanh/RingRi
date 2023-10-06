@@ -1,7 +1,7 @@
+import { ANIMATIONS } from '@assets/animations';
 import LottieView, { LottieViewProps } from 'lottie-react-native';
 import React, { memo, useEffect, useRef } from 'react';
 import { Animated, Easing, StyleSheet, ViewStyle } from 'react-native';
-import { ANIMATIONS } from '../../assets/animations';
 
 interface TAnimatedView extends LottieViewProps {
   source: keyof typeof ANIMATIONS;
