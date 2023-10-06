@@ -1,4 +1,4 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { mmkvStorage } from '@configs/storage';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { PersistConfig, persistReducer, persistStore } from 'redux-persist';
 import settingSlice from './slices/settingSlice';
@@ -13,7 +13,7 @@ const rootReducer = combineReducers({
 
 const persistConfig: PersistConfig<any> = {
   key: 'redux-persist',
-  storage: AsyncStorage,
+  storage: mmkvStorage,
   whitelist: ['setting'],
 };
 
