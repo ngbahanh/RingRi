@@ -1,5 +1,5 @@
 {
-  "cSpell.words": ["persistor", "Pressable"],
+  "cSpell.words": ["MMKV", "persistor", "Pressable"],
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.organizeImports": true,
