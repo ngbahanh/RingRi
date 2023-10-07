@@ -9,10 +9,11 @@
       "@configs/*": ["src/configs/*"],
       "@hooks/*": ["src/hooks/*"],
       "@locales/*": ["src/locales/*"],
-      "@navigation/*": ["src/navigation/*"],
+      "@navigators/*": ["src/navigators/*"],
       "@redux/*": ["src/redux/*"],
       "@screens/*": ["src/screens/*"],
-      "@themes/*": ["src/themes/*"]
+      "@themes/*": ["src/themes/*"],
+      "@utils/*": ["src/utils/*"]
     }
   }
 }

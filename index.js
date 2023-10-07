@@ -23,8 +23,4 @@ console.log(
   waitingModuleNames.length,
 );
 
-console.log(
-  `module.exports = ${JSON.stringify(loadedModuleNames.sort(), null, 2)};`,
-);
-
 AppRegistry.registerComponent(appName, () => App);

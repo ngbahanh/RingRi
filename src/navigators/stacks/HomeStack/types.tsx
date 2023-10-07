@@ -1,5 +1,5 @@
-import { ROUTER } from '@navigation/router';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { ROUTER } from 'src/navigators/router';
 
 type HomeStackParamList = {
   Home: undefined;

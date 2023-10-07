@@ -1,11 +1,11 @@
-import { STACKS } from '@navigation/enums';
-import { ROUTER } from '@navigation/router';
 import {
   NativeStackNavigationOptions,
   createNativeStackNavigator,
 } from '@react-navigation/native-stack';
-import ProfileScreen from '@screens/ProfileScreen';
+import ProfileScreen from '@screens/ProfileScreen/ProfileScreen';
 import React from 'react';
+import { STACKS } from 'src/navigators/enums';
+import { ROUTER } from 'src/navigators/router';
 import { ProfileStackParamList } from './types';
 
 const Stack = createNativeStackNavigator<ProfileStackParamList>();

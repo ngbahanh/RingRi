@@ -1,11 +1,11 @@
-import { STACKS } from '@navigation/enums';
-import { ROUTER } from '@navigation/router';
 import {
   NativeStackNavigationOptions,
   createNativeStackNavigator,
 } from '@react-navigation/native-stack';
-import HomeScreen from '@screens/HomeScreen';
+import HomeScreen from '@screens/HomeScreen/HomeScreen';
 import React from 'react';
+import { STACKS } from 'src/navigators/enums';
+import { ROUTER } from 'src/navigators/router';
 import { HomeStackParamList } from './types';
 
 const Stack = createNativeStackNavigator<HomeStackParamList>();

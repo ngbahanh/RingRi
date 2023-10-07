@@ -1,4 +1,4 @@
-import { mmkvStorage } from '@configs/storage';
+import { mmkvStorage } from '@configs/config.storage';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { PersistConfig, persistReducer, persistStore } from 'redux-persist';
 import settingSlice from './slices/settingSlice';
