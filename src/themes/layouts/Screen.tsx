@@ -5,6 +5,7 @@ import React, { ReactNode, useRef } from 'react';
 import {
   KeyboardAvoidingView,
   KeyboardAvoidingViewProps,
+  SafeAreaView,
   ScrollView,
   ScrollViewProps,
   StatusBar,
@@ -15,19 +16,30 @@ import {
   View,
   ViewStyle,
 } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-type PropsWithChildren<P = unknown> = P & { children?: ReactNode };
+interface ExtendedEdge {
+  top?: number;
+  bottom?: number;
+  left?: number;
+  right?: number;
+}
 
 interface BaseScreenProps {
   children?: ReactNode;
   style?: StyleProp<ViewStyle>;
   contentContainerStyle?: StyleProp<ViewStyle>;
-  safeAreaEdges?: ExtendedEdge[];
+  safeArea?: boolean;
+  safeAreaEdges?: ExtendedEdge;
   backgroundColor?: string;
   statusBarStyle?: StatusBarStyle;
   keyboardOffset?: number;
   StatusBarProps?: StatusBarProps;
   KeyboardAvoidingViewProps?: KeyboardAvoidingViewProps;
+}
+
+interface SafeAreaProps extends BaseScreenProps {
+  isSafeArea?: boolean;
 }
 
 interface FixedScreenProps extends BaseScreenProps {
@@ -56,6 +68,7 @@ const isNonScrolling = (preset?: ScreenProps['preset']) => {
 
 const ScreenWithoutScrolling = (props: ScreenProps) => {
   const { style, contentContainerStyle, children } = props;
+
   return (
     <View style={[style]}>
       <View style={[contentContainerStyle]}>{children}</View>
@@ -72,19 +85,17 @@ const ScreenWithScrolling = (props: ScreenProps) => {
     style,
   } = props as ScrollScreenProps;
 
-  const ref = useRef<ScrollView>();
+  const ref = useRef<ScrollView>(null);
 
   const { scrollEnabled, onContentSizeChange, onLayout } = useAutoPreset(
     props as AutoScreenProps,
   );
 
-  // Add native behavior of pressing the active tab to scroll to the top of the content
-  // More info at: https://reactnavigation.org/docs/use-scroll-to-top/
   useScrollToTop(ref);
 
   return (
     <ScrollView
-      {...{ keyboardShouldPersistTaps, scrollEnabled, ref }}
+      {...{ ref, scrollEnabled, keyboardShouldPersistTaps }}
       {...ScrollViewProps}
       onLayout={e => {
         onLayout(e);
@@ -104,12 +115,41 @@ const ScreenWithScrolling = (props: ScreenProps) => {
   );
 };
 
+const SafeAreaScreen = (props: SafeAreaProps) => {
+  const { children } = props;
+
+  return <SafeAreaView>{children}</SafeAreaView>;
+};
+
+const SaveAreaViewWrapper = (props: SafeAreaProps) => {
+  const { isSafeArea, safeAreaEdges, children } = props;
+
+  const insets = useSafeAreaInsets();
+
+  if (safeAreaEdges) {
+    const insetsStyle = {
+      marginTop: safeAreaEdges.top || insets.top,
+      marginBottom: safeAreaEdges.bottom || insets.bottom,
+      marginLeft: safeAreaEdges.left || insets.left,
+      marginRight: safeAreaEdges.right || insets.right,
+    };
+
+    return <View style={insetsStyle}>{children}</View>;
+  }
+
+  if (isSafeArea) {
+    return <SafeAreaScreen {...props}>{children}</SafeAreaScreen>;
+  }
+
+  return children;
+};
+
 const Screen = (props: ScreenProps) => {
   const {
     backgroundColor = 'white',
     KeyboardAvoidingViewProps,
     keyboardOffset = 0,
-    safeAreaEdges,
+    safeArea,
     StatusBarProps,
     statusBarStyle = 'dark-content',
   } = props;
@@ -121,11 +161,13 @@ const Screen = (props: ScreenProps) => {
         behavior={isIOS ? 'padding' : undefined}
         keyboardVerticalOffset={keyboardOffset}
         {...KeyboardAvoidingViewProps}>
-        {isNonScrolling(props.preset) ? (
-          <ScreenWithoutScrolling {...props} />
-        ) : (
-          <ScreenWithScrolling {...props} />
-        )}
+        <SaveAreaViewWrapper isSafeArea={safeArea} {...props}>
+          {isNonScrolling(props.preset) ? (
+            <ScreenWithoutScrolling {...props} />
+          ) : (
+            <ScreenWithScrolling {...props} />
+          )}
+        </SaveAreaViewWrapper>
       </KeyboardAvoidingView>
     </View>
   );
