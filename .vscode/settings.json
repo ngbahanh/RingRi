@@ -1,9 +1,18 @@
 {
-  "cSpell.words": ["MMKV", "persistor", "Pressable"],
+  "cSpell.words": [
+    "MMKV",
+    "persistor",
+    "Pressable",
+    "bootsplash",
+    "ENVFILE",
+    "gradlew",
+    "reduxjs",
+    "ringri"
+  ],
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.organizeImports": true,
-    "source.fixAll": true
+    "source.organizeImports": "explicit",
+    "source.fixAll": "explicit"
   },
   "eslint.format.enable": true,
   "files.eol": "\n",
